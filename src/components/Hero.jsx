@@ -1,96 +1,73 @@
-import { useEffect } from 'react';
-import { Award, Building2, Users, TrendingUp } from 'lucide-react';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import WhyChooseUs from '../components/WhyChooseUs';
+import Gallery from '../components/Gallery';
+import Testimonials from '../components/Testimonials';
+import CallToAction from '../components/CallToAction';
+import AlumniGallery from '../components/AlumniGallery';
 import { Link } from 'react-router-dom';
+import { ArrowRight, BookOpen } from 'lucide-react';
 
-const stats = [
-    { num: '22+', label: 'Years of Academic Excellence', icon: <Award size={20} /> },
-    { label: 'Extensive Recruiter Network', icon: <Building2 size={20} /> },
-    { label: 'Successful Student Placements', icon: <Users size={20} /> },
-    { label: 'Consistently Strong Placement Outcomes', icon: <TrendingUp size={20} /> },
-];
+import campus2 from '../assets/campus2.webp';
 
-// ── Individual stat card ──
-function StatPill({ stat }) {
+const Home = () => {
     return (
-        <div className="hero-stat-pill">
-            <div className="hero-stat-num">
-                {stat.num ? stat.num : stat.icon}
-            </div>
-            <div className="hero-stat-label">{stat.label}</div>
-        </div>
-    );
-}
+        <main>
+            <Hero />
+            <CallToAction />
 
-const Hero = () => {
+            
+            {/* Admissions / Enquiry Section */}
+            <div className="container" style={{ maxWidth: '1200px', margin: '4rem auto' }}>
+                <div className="enquiry-grid">
+                    <div className="enquiry-content">
+                        <div className="section-chip"><span className="chip-dot"></span>Admissions 2026</div>
+                        <h2 className="section-title" style={{ marginBottom: '1.5rem', fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>Your Future Starts <span style={{ color: 'var(--crimson)' }}>Here</span></h2>
+                        <p className="section-sub" style={{ marginBottom: '3rem', fontSize: '1.1rem', lineHeight: 1.7 }}>
+                            Join a community of innovators, leaders, and problem solvers.
+                            Our industry-aligned curriculum ensures you are ready for the global workforce from day one.
+                        </p>
+                        <Link to="/admissions" className="btn btn-primary">
+                            Explore Admissions <ArrowRight size={18} />
+                        </Link>
+                    </div>
 
-    return (
-        <section className="hero" id="hero">
-            {/* Background Video */}
-            <div className="hero-bg-video">
-                <iframe
-                    src="https://www.youtube.com/embed/kL8IpxB5v8s?si=a2fOijDtOz2KLnh_&autoplay=1&mute=1&controls=0&loop=1&playlist=kL8IpxB5v8s&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&vq=hd1080"
-                    title="Hero Background Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                />
-            </div>
-            <div className="hero-overlay" />
-            <div className="hero-grid" />
-            <div className="hero-blob hero-blob-1" />
-            <div className="hero-blob hero-blob-2" />
-
-            {/* Main Content */}
-            <div className="hero-content" style={{ paddingTop: '9rem', paddingBottom: '4rem' }}>
-                <div className="hero-badge">
-                    <span className="hero-badge-dot" />
-                    Admissions Open — Batch 2026–27
+                    <div className="enquiry-image-wrapper">
+                        <div className="blob-bg"></div>
+                        <div className="dots-bg"></div>
+                        <img src={campus2} alt="MIT Indore Campus Life" className="enquiry-img" />
+                    </div>
                 </div>
+            </div>
 
-                <h1>
-                    Empowering <span className="highlight">Engineers</span><br />
-                    Shaping the Future
-                </h1>
+            {/* Full About Section */}
+            <About />
 
-                <p className="hero-sub">
-                    Malwa Institute of Technology, Indore — where world-class academics meet
-                    real-world opportunities. Build your career with 200+ industry partners and
-                    a legacy of excellence.
-                </p>
-
-                <div className="hero-actions">
-                    <Link
-                        to="/academics"
-                        className="btn btn-primary"
-                    >
-                        Explore Academic Programs
-                        <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+            {/* Single Department Redirect Section */}
+            <section className="section" style={{ background: 'var(--navy)', color: '#fff', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div className="hero-grid" style={{ opacity: 0.1 }}></div>
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                    <div className="section-chip section-chip-white" style={{ background: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.2)', color: '#fff' }}>
+                        <span className="chip-dot" style={{ background: '#fff' }}></span>Academic Excellence
+                    </div>
+                    <h2 className="section-title section-title-white" style={{ marginBottom: '1.5rem' }}>Our <span>Departments</span></h2>
+                    <p className="section-sub section-sub-white" style={{ margin: '0 auto 2.5rem', maxWidth: '600px' }}>
+                        From Computer Science to Mechanical Engineering, discover our wide range of 
+                        undergraduate and postgraduate programs designed for the modern world.
+                    </p>
+                    <Link to="/academics" className="btn btn-white">
+                        <BookOpen size={20} /> View All Departments
                     </Link>
-                    <button
-                        className="btn btn-ghost hero-btn-discover"
-                        onClick={() => document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                        Discover More
-                    </button>
                 </div>
-            </div>
+            </section>
 
-            {/* Floating Stats */}
-            <div className="hero-stats">
-                {stats.map((s, i) => (
-                    <StatPill key={i} stat={s} />
-                ))}
-            </div>
+            <WhyChooseUs />
+            <Gallery />
+            <AlumniGallery />
+            <Testimonials />
 
-            {/* Scroll Indicator */}
-            <div className="hero-scroll">
-                <div className="scroll-line" />
-                <span>Scroll</span>
-            </div>
-        </section>
+        </main>
     );
 };
 
-export default Hero;
+export default Home;
