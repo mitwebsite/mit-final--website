@@ -115,14 +115,14 @@ const Footer = () => {
                     <div className="footer-map-wrap" style={{ position: 'relative' }}>
                         <MapEmbed />
                         <a
-                            href="https://www.google.com/maps/place/Malwa+Institute+of+Technology/@22.7667076,75.9303447,15z"
+                            href="https://maps.app.goo.gl/AfpdhR46acVf9Diz7"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ position: 'absolute', inset: 0, zIndex: 10 }}
                             aria-label="Open MIT Indore on Google Maps"
                         />
                     </div>
-                    <a href="https://www.google.com/maps/place/Malwa+Institute+of+Technology/@22.7667076,75.9303447,15z" target="_blank" rel="noopener noreferrer" className="footer-contact-item" style={{ textDecoration: 'none', transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--crimson)'} onMouseOut={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)'}>
+                    <a href="https://maps.app.goo.gl/AfpdhR46acVf9Diz7" target="_blank" rel="noopener noreferrer" className="footer-contact-item" style={{ textDecoration: 'none', transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--crimson)'} onMouseOut={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)'}>
                         <MapPin size={16} /> Indore-Dewas Bypass Road, Gram Nipaniya, Indore (M.P.) - 452016
                     </a>
                     <a href="tel:+919522722722" className="footer-contact-item" style={{ textDecoration: 'none', transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--crimson)'} onMouseOut={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)'}>
