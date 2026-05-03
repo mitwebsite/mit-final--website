@@ -59,15 +59,17 @@ const Hero = () => {
                 </p>
 
                 <div className="hero-actions">
-                    <Link
-                        to="/academics"
+                    <a
+                        href="https://forms.zohopublic.in/lakshya2025miti1/form/CollegeRegistrationForm/formperma/bW1CsY15bWQWYeLV6_DHEHzn6lVy8u5-7K8zOwu42Es"
                         className="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        Explore Academic Programs
+                        Apply Now for Admission
                         <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                    </Link>
+                    </a>
                     <button
                         className="btn btn-ghost hero-btn-discover"
                         onClick={() => document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' })}

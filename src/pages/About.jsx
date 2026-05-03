@@ -2,11 +2,17 @@ import About from '../components/About';
 import MissionVision from '../components/MissionVision';
 import Affiliations from '../components/Affiliations';
 import Testimonials from '../components/Testimonials';
+import SEO from '../components/SEO';
 import campus1 from '../assets/campus1.webp';
 
 const AboutPage = () => {
     return (
         <div className="page-wrapper" style={{ paddingTop: '80px' }}>
+            <SEO 
+                title="About Us"
+                description="Learn about the legacy of Malwa Institute of Technology (MIT) Indore. Established in 2004, our mission is to provide world-class engineering education."
+                keywords="About MIT Indore, Mission Vision MIT, Engineering Excellence, MIT History"
+            />
             {/* Hero-like header */}
             <div style={{
                 position: 'relative',

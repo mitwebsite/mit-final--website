@@ -2,10 +2,16 @@ import React from 'react';
 import { Shield, AlertTriangle, Scale, Users } from 'lucide-react';
 import campus1 from '../assets/campus1.webp';
 import committeeImg from '../assets/anti-ragging-committee.jpg';
+import SEO from '../components/SEO';
 
 const AntiRagging = () => {
     return (
         <div className="page-wrapper" style={{ paddingTop: '80px' }}>
+            <SEO 
+                title="Anti-Ragging"
+                description="Malwa Institute of Technology (MIT) Indore maintains a zero-tolerance policy towards ragging. Learn about our anti-ragging committee and regulations."
+                keywords="Anti Ragging MIT Indore, College Regulations, Student Safety, Ragging Prohibition, MIT Committee"
+            />
             {/* Hero Header */}
             <div style={{
                 position: 'relative',

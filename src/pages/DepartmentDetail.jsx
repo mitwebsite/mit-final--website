@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { departmentsData } from '../data/departmentsData';
 import { useEffect } from 'react';
 import { Check, User, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const DepartmentDetail = () => {
     const { id } = useParams();
@@ -29,6 +30,11 @@ const DepartmentDetail = () => {
 
     return (
         <div className="page-wrapper" style={{ paddingTop: '80px' }}>
+            <SEO 
+                title={`${dept.title} Department`}
+                description={`Explore the ${dept.title} department at MIT Indore. Learn about our degrees (${dept.degrees}), HOD ${dept.hod.name}, and academic facilities.`}
+                keywords={`${dept.title}, MIT Indore, Engineering Department, ${dept.degrees}, HOD ${dept.hod.name}`}
+            />
             {/* Hero Section */}
             <div className="dept-hero">
                 <div className="hero-grid" style={{ opacity: 0.1 }}></div>

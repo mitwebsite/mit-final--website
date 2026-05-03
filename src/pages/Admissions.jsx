@@ -3,6 +3,7 @@ import { FileText, Award, CheckCircle, Calendar, GraduationCap, BarChart, Briefc
 import CallToAction from '../components/CallToAction';
 import EnquiryForm from '../components/EnquiryForm';
 import campus2 from '../assets/campus2.webp';
+import SEO from '../components/SEO';
 
 // ── Eligibility data ───────────────────────────────────────────────────────────
 const programs = [
@@ -114,6 +115,11 @@ const Admissions = () => {
 
     return (
         <div className="page-wrapper adm-page" style={{ paddingTop: '80px' }}>
+            <SEO 
+                title="Admissions 2026"
+                description="Secure your future at MIT Indore. Admissions are open for B.Tech, M.Tech, and MBA for the 2026-27 batch. Apply now and join our community of innovators."
+                keywords="MIT Indore Admissions, B.Tech Admission 2026, MBA Admission Indore, Engineering College Application, Direct Admission Indore"
+            />
 
             {/* ── Hero Banner ── */}
             <div className="adm-hero" style={{ position: 'relative' }}>

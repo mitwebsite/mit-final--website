@@ -1,10 +1,16 @@
 import MapEmbed from '../components/MapEmbed';
 import EnquiryForm from '../components/EnquiryForm';
+import SEO from '../components/SEO';
 import { MapPin, Phone, Mail, Clock, Printer, Smartphone, PhoneCall } from 'lucide-react';
 
 const Contact = () => {
     return (
         <div className="page-wrapper" style={{ paddingTop: '100px', paddingBottom: '4rem' }}>
+            <SEO 
+                title="Contact Us"
+                description="Have questions? Get in touch with MIT Indore for admissions, academic queries, or general information. Visit our campus or contact us online."
+                keywords="Contact MIT Indore, Admissions Helpline, College Address Indore, MIT Email, Contact Engineering College"
+            />
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
 
                 {/* Header */}

@@ -5,6 +5,7 @@ import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
 import AlumniGallery from '../components/AlumniGallery';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
@@ -13,8 +14,13 @@ import campus2 from '../assets/campus2.webp';
 const Home = () => {
     return (
         <main>
+            <SEO 
+                title="Home"
+                description="Malwa Institute of Technology (MIT) Indore - Shaping the future of engineering and management. Explore our campus, courses, and placement opportunities."
+                keywords="MIT Indore, Malwa Institute of Technology, Engineering College Indore, Best Engineering College MP, Admissions 2026, Placements"
+            />
             <Hero />
-            
+
             {/* Admissions / Enquiry Section */}
             <div className="container" style={{ maxWidth: '1200px', margin: '4rem auto' }}>
                 <div className="enquiry-grid">
@@ -62,8 +68,9 @@ const Home = () => {
             <WhyChooseUs />
             <Gallery />
             <AlumniGallery />
-            <Testimonials />
             <CallToAction />
+            <Testimonials />
+
         </main>
     );
 };

@@ -4,8 +4,10 @@ import { Target, MessageSquare, Briefcase, Handshake, Calendar, MapPin, Trophy, 
 import campus2 from '../assets/campus2.webp';
 import placementVideo from '../assets/video/placement.mp4';
 import Testimonials from '../components/Testimonials';
+import SEO from '../components/SEO';
 
 // ─── Company Logos ────────────────────────────────────────────────────────────
+// ... (rest of the logos and data)
 import logoAccenture from '../assets/COMPANIES/ACCENTURE.webp';
 import logoAurusTech from '../assets/COMPANIES/Aurus Tech Pvt Ltd, Pune.webp';
 import logoCIS from '../assets/COMPANIES/CIS LTD.webp';
@@ -147,6 +149,11 @@ const Placements = () => {
 
     return (
         <div className="page-wrapper pl-page">
+            <SEO 
+                title="Placements"
+                description="Our graduates are recruited by top MNCs and industry leaders. Explore the placement records, major recruiters, and success stories at MIT Indore."
+                keywords="MIT Indore Placements, Engineering Placements Indore, MBA Placements, Top Recruiters MIT, Highest Package Indore"
+            />
 
             {/* ── 1. HERO ────────────────────────────────────────────── */}
             <section className="pl-hero" style={{ position: 'relative' }}>

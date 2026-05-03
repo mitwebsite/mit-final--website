@@ -1,5 +1,6 @@
 import Programs from '../components/Programs';
 import { Lightbulb, Handshake, MessageSquare } from 'lucide-react';
+import SEO from '../components/SEO';
 import calendar5th from '../assets/academics/6th.jpeg';
 import calendar8th from '../assets/academics/8th.jpeg';
 
@@ -7,6 +8,11 @@ import calendar8th from '../assets/academics/8th.jpeg';
 const Academics = () => {
     return (
         <div className="page-wrapper academics-page">
+            <SEO 
+                title="Academics"
+                description="Explore the academic programs at MIT Indore. We offer undergraduate and postgraduate courses in Engineering and Management with an industry-aligned curriculum."
+                keywords="Academics MIT Indore, Engineering Courses, Management Courses, B.Tech Indore, MBA Indore, Academic Calendar"
+            />
             <div className="academics-hero">
                 <h1 className="section-title section-title-white">Academic <span>Excellence</span></h1>
                 <p className="section-sub section-sub-white">

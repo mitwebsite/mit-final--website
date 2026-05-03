@@ -1,5 +1,6 @@
 import ThumbnailCarousel from '../components/ui/thumbnail-carousel';
 import VideoPlayer from '../components/VideoPlayer';
+import SEO from '../components/SEO';
 import { Book, Trophy, Mic2, Bus } from 'lucide-react';
 import campus5 from '../assets/campus5.webp';
 import camp1 from '../assets/mit-gallery/campus/camp1.webp';
@@ -11,6 +12,11 @@ import busImg from '../assets/amenities/campus-transport.webp';
 const CampusLife = () => {
     return (
         <div className="page-wrapper" style={{ paddingTop: '80px', overflowX: 'hidden' }}>
+            <SEO 
+                title="Campus Life"
+                description="Experience the vibrant life at MIT Indore. From sports and cultural festivals to state-of-the-art infrastructure and clubs."
+                keywords="Campus Life MIT, Student Activities, College Infrastructure, Sports MIT Indore, Cultural Events"
+            />
             <div style={{
                 background: `linear-gradient(rgba(5, 10, 20, 0.8), rgba(5, 10, 20, 0.8)), url(${camp1})`,
                 backgroundSize: 'cover',
