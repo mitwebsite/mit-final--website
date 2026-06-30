@@ -143,7 +143,7 @@ const Footer = () => {
 
             <div className="footer-bottom">
                 <div className="footer-bottom-inner">
-                    <p>© 2026 MIT Indore. All rights reserved.</p>
+                    <p>INDUS GLOBAL EDUCATIONAL AND WALFARE.</p>
                     <div className="footer-bottom-links">
                         <Link to="/">Privacy Policy</Link>
                         <Link to="/">Terms of Use</Link>
