@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SocialBar from './components/SocialBar';
 import Chatbot from './components/Chatbot';
+import TrendingModal from './components/TrendingModal';
 
 // Pages
 import Home from './pages/Home';
@@ -35,6 +36,7 @@ function App() {
       <Footer />
       <SocialBar />
       <Chatbot />
+      <TrendingModal />
     </Router>
   );
 }
