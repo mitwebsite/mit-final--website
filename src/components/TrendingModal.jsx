@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { X, Flame, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { X, Flame, ChevronLeft, ChevronRight } from 'lucide-react';
 
-import trendingMahak from '../assets/trending_mahak.jpg';
-import trendingAman from '../assets/trending_aman.jpg';
+import trendingMahak from '../assets/trending_mahak.jpeg';
+import trendingAman from '../assets/trending_aman.jpeg';
 import trendingVishwas from '../assets/trending_vishwas.jpg';
+import trendingAbhiraj from '../assets/trending_abhiraj.jpeg';
 
 const TRENDING_ITEMS = [
     {
@@ -30,12 +30,22 @@ const TRENDING_ITEMS = [
         image: trendingAman,
         alt: 'Aman Rai TCS Placement Poster',
         link: '/placements',
+    },
+    {
+        id: 'abhiraj-tcs',
+        tag: 'TCS PLACEMENT SELECTION',
+        title: 'Abhiraj Placed in TCS (Tata Consultancy Services)',
+        image: trendingAbhiraj,
+        alt: 'Abhiraj TCS Placement Poster',
+        link: '/placements',
     }
 ];
 
 const TrendingModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeTab, setActiveTab] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const pauseTimeoutRef = useRef(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -43,6 +53,32 @@ const TrendingModal = () => {
         }, 400);
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        if (!isOpen || isPaused) return;
+        const interval = setInterval(() => {
+            setActiveTab((prev) => (prev + 1) % TRENDING_ITEMS.length);
+        }, 1500);
+        return () => clearInterval(interval);
+    }, [isOpen, activeTab, isPaused]);
+
+    useEffect(() => {
+        return () => {
+            if (pauseTimeoutRef.current) {
+                clearTimeout(pauseTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    const handleImageTap = () => {
+        setIsPaused(true);
+        if (pauseTimeoutRef.current) {
+            clearTimeout(pauseTimeoutRef.current);
+        }
+        pauseTimeoutRef.current = setTimeout(() => {
+            setIsPaused(false);
+        }, 3000);
+    };
 
     const handleClose = () => {
         setIsOpen(false);
@@ -92,6 +128,8 @@ const TrendingModal = () => {
                         src={currentItem.image} 
                         alt={currentItem.alt} 
                         className="poster-full-img"
+                        onClick={handleImageTap}
+                        onTouchStart={handleImageTap}
                     />
 
                     {/* Left/Right Arrow Overlays */}
@@ -114,16 +152,6 @@ const TrendingModal = () => {
                                 aria-label={`View trending item ${idx + 1}`}
                             />
                         ))}
-                    </div>
-
-                    <div className="poster-footer-actions">
-                        <NavLink 
-                            to={currentItem.link} 
-                            className="trending-primary-btn poster-btn"
-                            onClick={handleClose}
-                        >
-                            View Placements & News <ArrowRight size={16} />
-                        </NavLink>
                     </div>
                 </div>
             </div>

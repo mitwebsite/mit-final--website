@@ -5933,7 +5933,7 @@ body.mobile-nav-open .chatbot-fab-container {
   border-top: 1px solid #F1F5F9;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .poster-btn {
